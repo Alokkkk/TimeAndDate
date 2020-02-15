@@ -1,0 +1,67 @@
+<html>
+
+<title>This is Assignmen ===>>></title>
+
+<body>
+    <script>
+
+        // Find Odd & Even 
+        function isEvenOrOdd(L, R) {
+
+            var oddCount = (R - L) / 2;
+
+            if (R % 2 == 1 || L % 2 == 1)
+                oddCount++;
+
+            if (oddCount % 2 == 0)
+                return "Even";
+            else
+                return "Odd";
+        }
+
+        console.log("Value is : ", isEvenOrOdd(2, 3))
+        document.write("Value is : ", isEvenOrOdd(3, 3))
+
+        // find Seconds 
+
+        function getSecondsTme(time) {
+            // Hours, minutes and seconds
+            var hrs = (time / 3600);
+            var mins = ((time % 3600) / 60);
+            var secs = time % 60;
+
+            // Output like "1:01" or "4:03:59" or "123:03:59"
+            var ret = "";
+            if (hrs > 0) {
+                ret += "" + hrs + "hours : " + (mins < 10 ? "0" : "");
+            }
+            ret += "" + mins + "minutes : " + (secs < 10 ? "0" : "");
+            ret += "" + secs + " sceonds";
+            return ret;
+        }
+
+        console.log("<br>Time in Seconds : ", getSecondsTme(129));
+        document.write("<br>Time in Seconds :", getSecondsTme(139));
+        // Find sort String
+
+        function sortStringElement(str) {
+            var arr = str.split('');
+            var tmp;
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        tmp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = tmp;
+                    }
+                }
+            }
+            return arr.join('');
+        }
+        console.log("<br>Sorted String : ", sortStringElement("XXXAX"))
+        document.write("<br>Sorted String :", sortStringElement("XXXAX"))
+
+    </script>
+</body>
+
+</html>
